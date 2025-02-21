@@ -2,11 +2,12 @@ import numpy as np
 import difflib
 from typing import List, Dict, Any, Tuple, Optional
 
-from langchain_openai import OpenAIEmbeddings
+# from langchain_openai import OpenAIEmbeddings
 from google.oauth2 import service_account
 from google.cloud import aiplatform
 import vertexai
 import os
+from database_utils.db_catalog.preprocess import EMBEDDING_FUNCTION
 
 GCP_PROJECT = os.getenv("GCP_PROJECT")
 GCP_REGION = os.getenv("GCP_REGION")
@@ -31,7 +32,7 @@ class RetrieveEntity(Tool):
 
     def __init__(self):
         super().__init__()
-        self.embedding_function = OpenAIEmbeddings(model="text-embedding-3-small")
+        self.embedding_function = EMBEDDING_FUNCTION
         self.edit_distance_threshold = 0.3
         self.embedding_similarity_threshold = 0.6
         

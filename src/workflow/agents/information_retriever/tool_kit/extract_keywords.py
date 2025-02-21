@@ -21,7 +21,7 @@ class ExtractKeywords(Tool):
     def _run(self, state: SystemState):
         request_kwargs = {
             "QUESTION": state.task.question,
-            "HINT": state.task.evidence,
+            "HINT": state.task.evidence
         }
         
         response = async_llm_chain_call(

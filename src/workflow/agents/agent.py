@@ -1,5 +1,6 @@
 from workflow.system_state import SystemState
 from workflow.agents.tool import Tool
+import re
 
 from llm.models import call_engine, get_llm_chain
 from llm.prompts import get_prompt
@@ -35,17 +36,20 @@ class Agent:
         self.chat_history.append({"role": "system", "content": system_prompt})
         
         try:
-            for i in range(10):
+            for i in range(3):
                 response = self.call_agent(system_state)
-                print(f"Agent {self.name} response: {response}")
+                print(f"Agent {self.name} response: {response}", flush=True)
                 if self.is_done(response):
+                    print(f"Agent {self.name} done in {i}", flush=True)
                     break
                 tool_name = self.get_next_tool_name(response)
+                print(f"tool name is: {tool_name}", flush=True)
                 self.chat_history.append({"role": "agent", "content": f"<tool_call>{tool_name}</tool_call>"})
                 tool = self.tools[tool_name]
                 try:
                     tool_response = self.call_tool(tool, system_state)
                     self.chat_history.append({"role": "tool_message", "content": tool_response})
+                    print(tool_response, flush=True)
                 except Exception as e:
                     print(f"Error in tool {tool_name}: {e}")
         except Exception as e:
@@ -67,9 +71,7 @@ class Agent:
         """
         Check if the response indicates that the agent is done.
         """
-        if "DONE" in response:
-            return True
-        return False
+        return "DONE" in response
     
     def get_next_tool_name(self, response: str) -> str:
         """

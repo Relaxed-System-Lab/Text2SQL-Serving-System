@@ -69,6 +69,10 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
             chain = prompt | engine
             prompt_text = prompt.invoke(request_kwargs).messages[0].content
             output = chain.invoke(request_kwargs)
+
+            # Log the raw output
+            # print(f"Raw model output: {output.content}")
+
             if isinstance(output, str):
                 if output.strip() == "":
                     engine = get_llm_chain("gemini-1.5-flash")
