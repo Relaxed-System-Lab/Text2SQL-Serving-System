@@ -44,7 +44,7 @@ Each configuration includes a constructor, parameters, and an optional preproces
 """
 
 model_path='/fred/models/models--deepseek-ai--DeepSeek-R1-Distill-Llama-8B/snapshots/74fbf131a939963dd1e244389bb61ad0d0440a4d'
-cuda_visible='0,1,2,3,4,5,6,7'
+cuda_visible='2,3,4,5'
 os.environ["HF_DATASETS_CACHE"] = model_path
 os.environ["HF_HOME"] = model_path
 os.environ["HF_HUB_CACHE"] = model_path
@@ -63,12 +63,21 @@ class CustomHuggingFacePipeline(HuggingFacePipeline):
         # Generate text with stop words
         generated_text = self.pipeline(prompt, **{**kwargs, **generation_kwargs})[0]["generated_text"]
 
-        cleaned = re.sub(r"<(thought|thoughts|system)>.*?</\1>", "", generated_text, flags=re.DOTALL).strip()
-        if '</think>' in cleaned:
-            parts = cleaned.split('</think>', 1)
-            response = parts[1].strip()
+        # Remove all <think> blocks and get text after last </think>
+        cleaned = re.sub(r"<(USER|SYSTEM)>.*?</\1>", "", generated_text, flags=re.DOTALL).strip()
+
+        # Split on </think> if exists and take last part
+        if '</think>' in generated_text:
+            response = generated_text.rsplit('</think>', 1)[-1].strip()
         else:
-            response = cleaned.strip()
+            response = cleaned
+
+        # cleaned = re.sub(r"<(thought|thoughts|system)>.*?</\1>", "", generated_text, flags=re.DOTALL).strip()
+        # if '</think>' in cleaned:
+        #     parts = cleaned.split('</think>', 1)
+        #     response = parts[1].strip()
+        # else:
+        #     response = cleaned.strip()
         return AIMessage(content=response)
     
     def _format_input(
@@ -128,75 +137,12 @@ def create_local_model(model_path, temperature=0.1):
         model=model,
         tokenizer=tokenizer,
         max_new_tokens=5000,
-        temperature=temperature,
+        # do_sample=False,  # Enable greedy decoding
+        # top_k=None,       # Disable top-k sampling
         top_p=0.9,
+        temperature=temperature  # Default value (ignored when do_sample=False)
     )
     return CustomHuggingFacePipeline(pipeline=hf_pipeline)
-
-# class LocalModel:
-#     def __init__(self, model_path, temperature=0.2):
-#         self.model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype="auto")
-#         self.tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
-#         self.default_temperature = temperature
-
-#     def invoke(self, 
-#               input: Union[str, List[Dict[str, str]]], 
-#               config: None = None, 
-#               *, 
-#               stop: List[str] = None, 
-#               **kwargs) -> AIMessage:
-#         # Handle different input types
-#         prompt = self._format_input(input)
-        
-#         # Get generation parameters
-#         temperature = kwargs.get('temperature', self.default_temperature)
-
-#         # Tokenize and generate
-#         inputs = self.tokenizer(prompt, return_tensors="pt").to('cuda')
-#         outputs = self.model.generate(
-#             inputs.input_ids,
-#             max_length=3000,
-#             temperature=temperature,
-#             do_sample=True,
-#             pad_token_id=self.tokenizer.eos_token_id,
-#             stopping_criteria=stop  # Add stop words handling if needed
-#         )
-
-#         # Decode and calculate tokens
-#         generated_text = self.tokenizer.decode(
-#             outputs[0][inputs.input_ids.shape[-1]:], 
-#             skip_special_tokens=True
-#         )
-        
-#         return self._create_ai_message(prompt, generated_text)
-
-#     def _format_input(self, input: Union[str, List]) -> str:
-#         """Handle different input types"""
-#         if isinstance(input, str):
-#             return input
-#         elif isinstance(input, list):
-#             return "\n".join([f"{m['role']}: {m['content']}" for m in input])
-#         else:
-#             raise ValueError(f"Unsupported input type: {type(input)}")
-
-#     def _create_ai_message(self, prompt: str, response: str) -> AIMessage:
-#         """Create AIMessage with metadata"""
-#         prompt_tokens = len(self.tokenizer.encode(prompt))
-#         completion_tokens = len(self.tokenizer.encode(response))
-        
-#         return AIMessage(
-#             content=response.strip(),
-#             response_metadata={
-#                 'token_usage': {
-#                     'prompt_tokens': prompt_tokens,
-#                     'completion_tokens': completion_tokens,
-#                     'total_tokens': prompt_tokens + completion_tokens
-#                 },
-#                 'model_name': 'local-model',
-#                 'system_fingerprint': 'fp_custom',
-#                 'finish_reason': 'stop'
-#             }
-#         )
 
 
 ENGINE_CONFIGS: Dict[str, Dict[str, Any]] = {

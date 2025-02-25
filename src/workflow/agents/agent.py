@@ -33,22 +33,20 @@ class Agent:
         system_prompt = system_prompt.format(agent_name=self.name, 
                                              task=self.task, 
                                              tools=self.get_tools_description())
-        self.chat_history.append({"role": "system", "content": system_prompt})
         
         try:
-            for i in range(3):
-                response = self.call_agent(system_state)
+            for i in range(10):
+                response = self.call_agent(system_prompt, system_state)
                 print(f"Agent {self.name} response: {response}", flush=True)
                 if self.is_done(response):
                     print(f"Agent {self.name} done in {i}", flush=True)
                     break
                 tool_name = self.get_next_tool_name(response)
                 print(f"tool name is: {tool_name}", flush=True)
-                self.chat_history.append({"role": "agent", "content": f"<tool_call>{tool_name}</tool_call>"})
                 tool = self.tools[tool_name]
                 try:
                     tool_response = self.call_tool(tool, system_state)
-                    self.chat_history.append({"role": "tool_message", "content": tool_response})
+                    self.chat_history.append(tool_name)
                     print(tool_response, flush=True)
                 except Exception as e:
                     print(f"Error in tool {tool_name}: {e}")
@@ -63,7 +61,7 @@ class Agent:
         """
         try:
             tool(system_state)
-            return f"Tool {tool.tool_name} called successfully."
+            return f"Tool {tool.tool_name} called successfully. What's next?"
         except Exception as e:
             raise e
         
@@ -82,18 +80,16 @@ class Agent:
             raise ValueError(f"Tool {tool_name} not found")
         return tool_name
     
-    def call_agent(self, system_state: SystemState) -> SystemState:
+    def call_agent(self, system_prompt, system_state: SystemState) -> SystemState:
         """
         Call the agent with the given system state.
         """
         
-        messages = ""
-        for chat in self.chat_history:
-            role = chat["role"]
-            content = chat["content"]
-            messages += f"<{role}>\n{content}\n</{role}>\n"
-        messages += f"<agent>\n"
-        
+        messages = f"<SYSTEM>\n{system_prompt}\n</SYSTEM>\n"
+        messages += f"<USER>\nThe following tools have been called in order: \n{str(self.chat_history)}\n</USER>\n"
+        sql_history = system_state.construct_history()
+        messages += f"<USER>\nThe SQL written history are given below: \n{sql_history}\n</USER>\n"
+
         llm_chain = get_llm_chain(engine_name=self.config["engine"], temperature=0)
         response = call_engine(message=messages, engine=llm_chain)
         return response

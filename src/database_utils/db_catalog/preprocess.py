@@ -33,8 +33,8 @@ if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
 
 # EMBEDDING_FUNCTION = VertexAIEmbeddings(model_name="text-embedding-004")#OpenAIEmbeddings(model="text-embedding-3-large")
 # EMBEDDING_FUNCTION = OpenAIEmbeddings(model="text-embedding-3-large")
-model_path='/fred/models/models--deepseek-ai--DeepSeek-R1-Distill-Qwen-7B/snapshots/6602cadec947dbb53e64f3d8d6425320b2197247'
-cuda_visible='0,1,2'
+model_path='/fred/models/models--deepseek-ai--DeepSeek-R1-Distill-Llama-8B/snapshots/74fbf131a939963dd1e244389bb61ad0d0440a4d'
+cuda_visible='2,3,4,5'
 os.environ["HF_DATASETS_CACHE"] = model_path
 os.environ["HF_HOME"] = model_path
 os.environ["HF_HUB_CACHE"] = model_path
@@ -43,15 +43,22 @@ os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
 class LocalEmbeddings:
     def __init__(self, model_path):
         self.tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
-        self.model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype="auto")
+        self.model = AutoModelForCausalLM.from_pretrained(model_path, output_hidden_states=True, torch_dtype="auto")
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model.to(self.device)
+        self.model = self.model.to(self.device)  # Consolidate model to one device
 
     def embed_documents(self, texts):
         inputs = self.tokenizer(texts, padding=True, truncation=True, return_tensors="pt").to(self.device)
         with torch.no_grad():
-            outputs = self.model(**inputs)
-        return outputs.last_hidden_state.mean(dim=1).cpu().numpy()
+            outputs = self.model(**inputs)  # All tensors now on the same device
+        # Extract embeddings
+        hidden_states = outputs.hidden_states
+        last_hidden_state = hidden_states[-1]
+        return last_hidden_state.mean(dim=1).cpu().float().numpy()
+    
+    def embed_query(self, text):
+        embeddings = self.embed_documents([text])
+        return embeddings[0]
 
 EMBEDDING_FUNCTION = LocalEmbeddings(model_path=model_path)
 
