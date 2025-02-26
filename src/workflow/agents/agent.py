@@ -75,7 +75,7 @@ class Agent:
         """
         Get the next tool to call based on the response.
         """
-        tool_name = response.split("<tool_call>")[1].split("</tool_call>")[0].strip()
+        tool_name = response.split("ANSWER:")[1].strip()
         if tool_name not in self.tools:
             raise ValueError(f"Tool {tool_name} not found")
         return tool_name
@@ -84,11 +84,9 @@ class Agent:
         """
         Call the agent with the given system state.
         """
-        
-        messages = f"<SYSTEM>\n{system_prompt}\n</SYSTEM>\n"
-        messages += f"<USER>\nThe following tools have been called in order: \n{str(self.chat_history)}\n</USER>\n"
+        messages = [{"role": "system", "content": system_prompt}]
         sql_history = system_state.construct_history()
-        messages += f"<USER>\nThe SQL written history are given below: \n{sql_history}\n</USER>\n"
+        messages.append({"role": "user", "content": f"The following tools have been called in order: \n{str(self.chat_history)}\nThe SQL written history are given below: \n{sql_history}\n"})
 
         llm_chain = get_llm_chain(engine_name=self.config["engine"], temperature=0)
         response = call_engine(message=messages, engine=llm_chain)

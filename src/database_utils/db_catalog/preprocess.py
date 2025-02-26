@@ -6,7 +6,7 @@ from langchain_chroma import Chroma
 from langchain.schema.document import Document
 # from langchain_openai import OpenAIEmbeddings
 # from langchain_google_vertexai import VertexAIEmbeddings
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer
 import torch
 from google.oauth2 import service_account
 from google.cloud import aiplatform
@@ -33,8 +33,8 @@ if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
 
 # EMBEDDING_FUNCTION = VertexAIEmbeddings(model_name="text-embedding-004")#OpenAIEmbeddings(model="text-embedding-3-large")
 # EMBEDDING_FUNCTION = OpenAIEmbeddings(model="text-embedding-3-large")
-model_path='/fred/models/models--deepseek-ai--DeepSeek-R1-Distill-Llama-8B/snapshots/74fbf131a939963dd1e244389bb61ad0d0440a4d'
-cuda_visible='2,3,4,5'
+model_path='../models/models--meta-llama--Llama-3.1-70B-Instruct/snapshots/945c8663693130f8be2ee66210e062158b2a9693'
+cuda_visible='0,1,2,3'
 os.environ["HF_DATASETS_CACHE"] = model_path
 os.environ["HF_HOME"] = model_path
 os.environ["HF_HUB_CACHE"] = model_path
@@ -42,19 +42,29 @@ os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
 
 class LocalEmbeddings:
     def __init__(self, model_path):
-        self.tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
-        self.model = AutoModelForCausalLM.from_pretrained(model_path, output_hidden_states=True, torch_dtype="auto")
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        self.model = self.model.to(self.device)  # Consolidate model to one device
+        self.tokenizer = AutoTokenizer.from_pretrained(model_path)
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+        self.model = AutoModel.from_pretrained(
+            model_path,
+            device_map="auto",
+            torch_dtype=torch.float16,
+            output_hidden_states=True
+        )
 
     def embed_documents(self, texts):
-        inputs = self.tokenizer(texts, padding=True, truncation=True, return_tensors="pt").to(self.device)
+        # Tokenize and move inputs to the same device as the model
+        inputs = self.tokenizer(texts, padding=True, truncation=True, return_tensors="pt").to(self.model.device)
+
         with torch.no_grad():
-            outputs = self.model(**inputs)  # All tensors now on the same device
-        # Extract embeddings
-        hidden_states = outputs.hidden_states
-        last_hidden_state = hidden_states[-1]
-        return last_hidden_state.mean(dim=1).cpu().float().numpy()
+            outputs = self.model(**inputs)
+        
+        # Use attention_mask to ignore padding tokens in mean pooling
+        attention_mask = inputs.attention_mask.unsqueeze(-1)
+        last_hidden_state = outputs.last_hidden_state
+        embeddings = (last_hidden_state * attention_mask).sum(dim=1) / attention_mask.sum(dim=1)
+        return embeddings.to(torch.float32).cpu().numpy()
+        # return outputs.last_hidden_state.mean(dim=1).to(torch.float32).cpu().numpy()
     
     def embed_query(self, text):
         embeddings = self.embed_documents([text])

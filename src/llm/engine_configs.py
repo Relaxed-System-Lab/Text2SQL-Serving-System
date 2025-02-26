@@ -43,8 +43,8 @@ This module defines configurations for various language models using the langcha
 Each configuration includes a constructor, parameters, and an optional preprocessing function.
 """
 
-model_path='/fred/models/models--deepseek-ai--DeepSeek-R1-Distill-Llama-8B/snapshots/74fbf131a939963dd1e244389bb61ad0d0440a4d'
-cuda_visible='2,3,4,5'
+model_path='../models/models--meta-llama--Llama-3.1-70B-Instruct/snapshots/945c8663693130f8be2ee66210e062158b2a9693'
+cuda_visible='0,1,2,3'
 os.environ["HF_DATASETS_CACHE"] = model_path
 os.environ["HF_HOME"] = model_path
 os.environ["HF_HUB_CACHE"] = model_path
@@ -52,32 +52,29 @@ os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
 
 class CustomHuggingFacePipeline(HuggingFacePipeline):
     def invoke(self, input: Union[str, List[Union[List[str], tuple[str, str], str, Dict[str, Any]]]], config = None, *, stop = None, **kwargs) -> AIMessage: 
-        # Handle stop words
-        generation_kwargs = {}
+        # Handle stop words and EOS token
+        generation_kwargs = {
+            "eos_token_id": self.pipeline.tokenizer.eos_token_id,
+        }
         if stop:
             generation_kwargs["stop_sequences"] = stop
 
         # Handle different input types
         prompt = self._format_input(input)
         # generated_text = self.pipeline(prompt, **kwargs)[0]["generated_text"]
-        # Generate text with stop words
-        generated_text = self.pipeline(prompt, **{**kwargs, **generation_kwargs})[0]["generated_text"]
+        outputs = self.pipeline(
+            prompt,
+            return_full_text=False,  # Only return new text
+            **{**kwargs, **generation_kwargs}
+        )
+        generated_text = outputs[0]["generated_text"]
 
-        # Remove all <think> blocks and get text after last </think>
-        cleaned = re.sub(r"<(USER|SYSTEM)>.*?</\1>", "", generated_text, flags=re.DOTALL).strip()
-
-        # Split on </think> if exists and take last part
-        if '</think>' in generated_text:
-            response = generated_text.rsplit('</think>', 1)[-1].strip()
-        else:
-            response = cleaned
-
-        # cleaned = re.sub(r"<(thought|thoughts|system)>.*?</\1>", "", generated_text, flags=re.DOTALL).strip()
-        # if '</think>' in cleaned:
-        #     parts = cleaned.split('</think>', 1)
-        #     response = parts[1].strip()
+        # cleaned = re.sub(r"<(USER|SYSTEM)>.*?</\1>", "", generated_text, flags=re.DOTALL).strip()
+        # if '</think>' in generated_text:
+        #     response = generated_text.rsplit('</think>', 1)[-1].strip()
         # else:
-        #     response = cleaned.strip()
+        #     response = cleaned
+        response = self._process_response(generated_text)
         return AIMessage(content=response)
     
     def _format_input(
@@ -99,35 +96,33 @@ class CustomHuggingFacePipeline(HuggingFacePipeline):
         # Add handling for ChatPromptValue
         elif isinstance(input, ChatPromptValue):
             return input.to_string()
-        elif isinstance(input, list) and not isinstance(input, str):
+        elif isinstance(input, List):
             messages = []
             for item in input:
-                # If item is a string, include as-is.
-                if isinstance(item, str):
-                    messages.append(item)
                 # Handle objects with attributes role and content (e.g. BaseMessage)
-                elif hasattr(item, "role") and hasattr(item, "content"):
-                    messages.append(f"{item.role}: {item.content}")
+                if hasattr(item, "role") and hasattr(item, "content"):
+                    messages.append({"role": item.role, "content": item.content})
                 # Handle dictionaries.
-                elif isinstance(item, dict):
-                    # If the dict has 'role' and 'content', use them.
-                    if "role" in item and "content" in item:
-                        messages.append(f"{item['role']}: {item['content']}")
-                    else:
-                        # Otherwise, join all key-value pairs.
-                        formatted_pairs = [f"{k}: {v}" for k, v in item.items()]
-                        messages.append("\n".join(formatted_pairs))
-                # Handle lists and tuples.
-                elif isinstance(item, (list, tuple)):
-                    if len(item) == 2 and all(isinstance(x, str) for x in item):
-                        messages.append(f"{item[0]}: {item[1]}")
-                    else:
-                        messages.append(" ".join(str(x) for x in item))
+                elif isinstance(item, dict) and "role" in item and "content" in item:
+                    messages.append(item)
                 else:
-                    messages.append(str(item))
-            return "\n".join(messages)
+                    return "\n".join(str(x) for x in input)
+            return self.pipeline.tokenizer.apply_chat_template(
+                messages,
+                tokenize=False,
+                add_generation_prompt=True
+            )
         else:
             raise ValueError(f"Unsupported input type: {type(input)}")
+    
+    def _process_response(self, text: str) -> str:
+        """Clean response and ensure EOS handling"""
+        # Truncate at EOS token if present
+        eos_token = self.pipeline.tokenizer.eos_token
+        if eos_token in text:
+            text = text.split(eos_token)[0]
+        return text.strip()
+
 
 def create_local_model(model_path, temperature=0.1):
     tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
@@ -140,7 +135,8 @@ def create_local_model(model_path, temperature=0.1):
         # do_sample=False,  # Enable greedy decoding
         # top_k=None,       # Disable top-k sampling
         top_p=0.9,
-        temperature=temperature  # Default value (ignored when do_sample=False)
+        temperature=temperature,
+        eos_token_id=tokenizer.eos_token_id  # Default value (ignored when do_sample=False)
     )
     return CustomHuggingFacePipeline(pipeline=hf_pipeline)
 

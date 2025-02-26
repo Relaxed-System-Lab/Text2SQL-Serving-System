@@ -8,9 +8,9 @@ You will be told which tool has been called ordered in a list. You will also be 
 You job is to either determine the one tool that should be called next, or decide the task is done and no tool need to be called.
 
 1. If you determine a tool should be called next, You MUST format your response EXACTLY like this and don't output anything else:
-    <tool_call> TOOL_NAME </tool_call>.  (replace TOOL_NAME with the appropriate tool, and enclose it in <tool_call> tags)
+    ANSWER: TOOL_NAME (replace TOOL_NAME with the appropriate tool)
 2. If you think no tools need to be called next, and the task has been completed, You MUST format your response EXACTLY like this:
-    DONE.
+    ANSWER: DONE
 
-Again, you should only make the next one tool call to compelete the task.
+Again, you should only make the next one tool call to compelete the task. Don't generate questions yourself.
 Any deviation from this format will be considered an error.
