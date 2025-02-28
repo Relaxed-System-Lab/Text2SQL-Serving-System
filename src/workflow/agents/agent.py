@@ -42,12 +42,10 @@ class Agent:
                     print(f"Agent {self.name} done in {i}", flush=True)
                     break
                 tool_name = self.get_next_tool_name(response)
-                print(f"tool name is: {tool_name}", flush=True)
                 tool = self.tools[tool_name]
                 try:
                     tool_response = self.call_tool(tool, system_state)
                     self.chat_history.append(tool_name)
-                    print(tool_response, flush=True)
                 except Exception as e:
                     print(f"Error in tool {tool_name}: {e}")
         except Exception as e:

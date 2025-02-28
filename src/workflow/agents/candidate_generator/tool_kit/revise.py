@@ -61,18 +61,20 @@ class Revise(Tool):
             except Exception as e:
                 print(f"Error in Checker while creating request list: {e}")
                 continue
-                
-        try:
-            response = async_llm_chain_call(
-                prompt=get_prompt(template_name=self.template_name),
-                engine=get_llm_chain(**self.engine_config),
-                parser=get_parser(self.parser_name),
-                request_list=request_list,
-                step=self.tool_name
-            )
-            response = [r[0] for r in response]
-        except Exception as e:
-            print(f"Error in Checker while getting response: {e}")
+        if len(request_list) > 0:
+            try:
+                response = async_llm_chain_call(
+                    prompt=get_prompt(template_name=self.template_name),
+                    engine=get_llm_chain(**self.engine_config),
+                    parser=get_parser(self.parser_name),
+                    request_list=request_list,
+                    step=self.tool_name
+                )
+                response = [r[0] for r in response]
+            except Exception as e:
+                print(f"Error in Checker while getting response: {e}")
+                response = []
+        else:
             response = []
         index = 0
         for target_SQL_meta_info in target_SQL_meta_infos:

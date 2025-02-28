@@ -26,28 +26,26 @@ safety_settings = {
 }
 
 
-GCP_PROJECT = os.getenv("GCP_PROJECT")
-GCP_REGION = os.getenv("GCP_REGION")
-GCP_CREDENTIALS = os.getenv("GCP_CREDENTIALS")
+# GCP_PROJECT = os.getenv("GCP_PROJECT")
+# GCP_REGION = os.getenv("GCP_REGION")
+# GCP_CREDENTIALS = os.getenv("GCP_CREDENTIALS")
 
-if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
-    aiplatform.init(
-    project=GCP_PROJECT,
-    location=GCP_REGION,
-    credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS)
-    )
-    vertexai.init(project=GCP_PROJECT, location=GCP_REGION, credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS))
+# if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
+#     aiplatform.init(
+#     project=GCP_PROJECT,
+#     location=GCP_REGION,
+#     credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS)
+#     )
+#     vertexai.init(project=GCP_PROJECT, location=GCP_REGION, credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS))
 
 """
 This module defines configurations for various language models using the langchain library.
 Each configuration includes a constructor, parameters, and an optional preprocessing function.
 """
 
-model_path='../models/models--meta-llama--Llama-3.1-70B-Instruct/snapshots/945c8663693130f8be2ee66210e062158b2a9693'
+model_path1='../models/models--meta-llama--Llama-3.1-70B-Instruct/snapshots/945c8663693130f8be2ee66210e062158b2a9693'
+model_path2='../models/models--tablegpt--TableGPT2-7B/snapshots/9de1c2116151f6ccc6915616f625bb9c365dd9ba'
 cuda_visible='0,1,2,3'
-os.environ["HF_DATASETS_CACHE"] = model_path
-os.environ["HF_HOME"] = model_path
-os.environ["HF_HUB_CACHE"] = model_path
 os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
 
 class CustomHuggingFacePipeline(HuggingFacePipeline):
@@ -125,13 +123,16 @@ class CustomHuggingFacePipeline(HuggingFacePipeline):
 
 
 def create_local_model(model_path, temperature=0.1):
+    os.environ["HF_DATASETS_CACHE"] = model_path
+    os.environ["HF_HOME"] = model_path
+    os.environ["HF_HUB_CACHE"] = model_path
     tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False)
     model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype="auto")
     hf_pipeline = pipeline(
         "text-generation",
         model=model,
         tokenizer=tokenizer,
-        max_new_tokens=5000,
+        max_new_tokens=1000,
         # do_sample=False,  # Enable greedy decoding
         # top_k=None,       # Disable top-k sampling
         top_p=0.9,
@@ -142,9 +143,13 @@ def create_local_model(model_path, temperature=0.1):
 
 
 ENGINE_CONFIGS: Dict[str, Dict[str, Any]] = {
-    "r1-distill": {
+    "llama-agent": {
         "constructor": create_local_model,
-        "params": {"model_path": model_path, "temperature": 0.1},
+        "params": {"model_path": model_path1, "temperature": 0.1},
+    },
+    "tablegpt-tool": {
+        "constructor": create_local_model,
+        "params": {"model_path": model_path2, "temperature": 0.1},
     },
     "gemini-pro": {
         "constructor": ChatGoogleGenerativeAI,

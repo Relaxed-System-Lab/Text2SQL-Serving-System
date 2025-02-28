@@ -12,6 +12,7 @@ from google.oauth2 import service_account
 from google.cloud import aiplatform
 import vertexai
 import sys
+from sentence_transformers import SentenceTransformer
 sys.path.append(".")
 
 from database_utils.db_catalog.csv_utils import load_tables_description
@@ -22,56 +23,45 @@ GCP_PROJECT = os.getenv("GCP_PROJECT")
 GCP_REGION = os.getenv("GCP_REGION")
 GCP_CREDENTIALS = os.getenv("GCP_CREDENTIALS")
 
-if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
-    aiplatform.init(
-    project=GCP_PROJECT,
-    location=GCP_REGION,
-    credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS)
-    )
-    vertexai.init(project=GCP_PROJECT, location=GCP_REGION, credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS))
+# if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
+#     aiplatform.init(
+#     project=GCP_PROJECT,
+#     location=GCP_REGION,
+#     credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS)
+#     )
+#     vertexai.init(project=GCP_PROJECT, location=GCP_REGION, credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS))
 
 
 # EMBEDDING_FUNCTION = VertexAIEmbeddings(model_name="text-embedding-004")#OpenAIEmbeddings(model="text-embedding-3-large")
 # EMBEDDING_FUNCTION = OpenAIEmbeddings(model="text-embedding-3-large")
-model_path='../models/models--meta-llama--Llama-3.1-70B-Instruct/snapshots/945c8663693130f8be2ee66210e062158b2a9693'
+model_name = "sentence-transformers/all-mpnet-base-v2"
+local_model_path = "../models/sentence-transformers_all-mpnet-base-v2"
 cuda_visible='0,1,2,3'
-os.environ["HF_DATASETS_CACHE"] = model_path
-os.environ["HF_HOME"] = model_path
-os.environ["HF_HUB_CACHE"] = model_path
 os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
 
-class LocalEmbeddings:
+# Download model if not exists
+if not os.path.exists(local_model_path):
+    model = SentenceTransformer(model_name)
+    model.save(local_model_path)
+
+
+class SentenceTransformerEmbeddings:
     def __init__(self, model_path):
-        self.tokenizer = AutoTokenizer.from_pretrained(model_path)
-        if self.tokenizer.pad_token is None:
-            self.tokenizer.pad_token = self.tokenizer.eos_token
-        self.model = AutoModel.from_pretrained(
-            model_path,
-            device_map="auto",
-            torch_dtype=torch.float16,
-            output_hidden_states=True
-        )
+        self.model = SentenceTransformer(model_path, device="cuda")
 
     def embed_documents(self, texts):
-        # Tokenize and move inputs to the same device as the model
-        inputs = self.tokenizer(texts, padding=True, truncation=True, return_tensors="pt").to(self.model.device)
+        return self.model.encode(
+            texts,
+            convert_to_numpy=True,
+            normalize_embeddings=True,
+            show_progress_bar=False
+        )
 
-        with torch.no_grad():
-            outputs = self.model(**inputs)
-        
-        # Use attention_mask to ignore padding tokens in mean pooling
-        attention_mask = inputs.attention_mask.unsqueeze(-1)
-        last_hidden_state = outputs.last_hidden_state
-        embeddings = (last_hidden_state * attention_mask).sum(dim=1) / attention_mask.sum(dim=1)
-        return embeddings.to(torch.float32).cpu().numpy()
-        # return outputs.last_hidden_state.mean(dim=1).to(torch.float32).cpu().numpy()
-    
     def embed_query(self, text):
-        embeddings = self.embed_documents([text])
-        return embeddings[0]
+        return self.embed_documents([text])[0]
 
-EMBEDDING_FUNCTION = LocalEmbeddings(model_path=model_path)
-
+# Usage
+EMBEDDING_FUNCTION = SentenceTransformerEmbeddings(local_model_path)
 
 
 def make_db_context_vec_db(db_directory_path: str, **kwargs) -> None:
@@ -87,7 +77,7 @@ def make_db_context_vec_db(db_directory_path: str, **kwargs) -> None:
 
     table_description = load_tables_description(db_directory_path, kwargs.get("use_value_description", True))
     docs = []
-    
+
     for table_name, columns in table_description.items():
         for column_name, column_info in columns.items():
             metadata = {
@@ -95,12 +85,13 @@ def make_db_context_vec_db(db_directory_path: str, **kwargs) -> None:
                 "original_column_name": column_name,
                 "column_name": column_info.get('column_name', ''),
                 "column_description": column_info.get('column_description', ''),
-                "value_description": column_info.get('value_description', '') if kwargs.get("use_value_description", True) else ""
+                "value_description": column_info.get('value_description', '') if kwargs.get("use_value_description",
+                                                                                            True) else ""
             }
             for key in ['column_name', 'column_description', 'value_description']:
                 if column_info.get(key, '').strip():
                     docs.append(Document(page_content=column_info[key], metadata=metadata))
-    
+
     logging.info(f"Creating context vector database for {db_id}")
     vector_db_path = Path(db_directory_path) / "context_vector_db"
 

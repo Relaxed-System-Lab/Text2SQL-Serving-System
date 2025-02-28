@@ -66,22 +66,21 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
     for attempt in range(max_attempts):
         try:
             # chain = prompt | engine | parser
+            fixing_engine = get_llm_chain("llama-agent")
+            robust_parser = OutputFixingParser.from_llm(parser=parser, llm=fixing_engine)
             chain = prompt | engine
             prompt_text = prompt.invoke(request_kwargs).messages[0].content
             output = chain.invoke(request_kwargs)
-
-            # Log the raw output
-            # print(f"Raw model output: {output.content}")
-
+            # print(f'the tool raw output is: {output.content}')
             if isinstance(output, str):
                 if output.strip() == "":
-                    engine = get_llm_chain("gemini-1.5-flash")
+                    # engine = get_llm_chain("gemini-1.5-flash")
                     raise OutputParserException("Empty output")
             else:
                 if output.content.strip() == "":    
-                    engine = get_llm_chain("gemini-1.5-flash")
+                    # engine = get_llm_chain("gemini-1.5-flash")
                     raise OutputParserException("Empty output")
-            output = parser.invoke(output)
+            output = robust_parser.invoke(output)
             logger.log_conversation(
                 [
                     {
@@ -99,8 +98,6 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
             return output
         except OutputParserException as e:
             logger.log(f"OutputParserException: {e}", "warning")
-            new_parser = OutputFixingParser.from_llm(parser=parser, llm=engine)
-            chain = prompt | engine | new_parser
             if attempt == max_attempts - 1:
                 logger.log(f"call_chain: {e}", "error")
                 raise e

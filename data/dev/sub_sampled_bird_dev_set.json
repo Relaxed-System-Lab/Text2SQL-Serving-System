@@ -1,5 +1,53 @@
 [
     {
+        "question_id": 423,
+        "db_id": "card_games",
+        "question": "Please provide the ids of top three powerful pairs of Kingdom Foil and Kingdom Cards sorted by Kingdom Foil id in alphabetical order.",
+        "evidence": "poweful refers to cardKingdomFoilId is not null AND cardKingdomId is not null",
+        "SQL": "SELECT cardKingdomFoilId, cardKingdomId FROM cards WHERE cardKingdomFoilId IS NOT NULL AND cardKingdomId IS NOT NULL ORDER BY cardKingdomFoilId LIMIT 3",
+        "difficulty": "simple"
+    },
+    {
+        "question_id": 436,
+        "db_id": "card_games",
+        "question": "How many cards have frame effect as extendedart? List out the id of those cards.",
+        "evidence": "\nframe effect as extendedart refers to frameEffects = 'extendedart'\n",
+        "SQL": "SELECT id FROM cards WHERE frameEffects = 'extendedart' GROUP BY id",
+        "difficulty": "simple"
+    },
+    {
+        "question_id": 257,
+        "db_id": "toxicology",
+        "question": "List down atom id2 for atoms with element sulfur.",
+        "evidence": "element sulfur refers to element = 's'",
+        "SQL": "SELECT DISTINCT T2.atom_id2 FROM atom AS T1 INNER JOIN connected AS T2 ON T1.atom_id = T2.atom_id WHERE T1.element = 's'",
+        "difficulty": "simple"
+    },
+    {
+        "question_id": 267,
+        "db_id": "toxicology",
+        "question": "List down the bond type for molecules from molecule id TR000 to TR050.",
+        "evidence": "double bond refers to bond_type = ' = '; single bond refers to bond_type = '-'; triple bond refers to bond_type = '#';",
+        "SQL": "SELECT T2.molecule_id, T2.bond_type FROM molecule AS T1 INNER JOIN bond AS T2 ON T1.molecule_id = T2.molecule_id WHERE T1.molecule_id BETWEEN 'TR000' AND 'TR050'",
+        "difficulty": "moderate"
+    },
+    {
+        "question_id": 93,
+        "db_id": "financial",
+        "question": "How many male customers who are living in North Bohemia have average salary greater than 8000?",
+        "evidence": "Male means that gender = 'M'; A3 refers to region; A11 pertains to average salary.",
+        "SQL": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'M' AND T2.A3 = 'North Bohemia' AND T2.A11 > 8000",
+        "difficulty": "moderate"
+    },
+    {
+        "question_id": 97,
+        "db_id": "financial",
+        "question": "List out the clients who choose statement of issuance after transaction are Disponent?",
+        "evidence": "'POPLATEK PO OBRATU' stands for issuance after transaction",
+        "SQL": "SELECT T2.client_id FROM account AS T1 INNER JOIN disp AS T2 ON T1.account_id = T2.account_id WHERE T1.frequency = 'POPLATEK PO OBRATU' AND T2.type = 'DISPONENT'",
+        "difficulty": "simple"
+    },
+    {
         "question_id": 9,
         "db_id": "california_schools",
         "question": "Among the schools with the average score in Math over 560 in the SAT test, how many schools are directly charter-funded?",
@@ -62,22 +110,6 @@
         "evidence": "State of California refers to state = 'CA'",
         "SQL": "SELECT T2.City, T1.`Low Grade`, T1.`School Name` FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T2.State = 'CA' ORDER BY T2.Latitude ASC LIMIT 1",
         "difficulty": "moderate"
-    },
-    {
-        "question_id": 93,
-        "db_id": "financial",
-        "question": "How many male customers who are living in North Bohemia have average salary greater than 8000?",
-        "evidence": "Male means that gender = 'M'; A3 refers to region; A11 pertains to average salary.",
-        "SQL": "SELECT COUNT(T1.client_id) FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T1.gender = 'M' AND T2.A3 = 'North Bohemia' AND T2.A11 > 8000",
-        "difficulty": "moderate"
-    },
-    {
-        "question_id": 97,
-        "db_id": "financial",
-        "question": "List out the clients who choose statement of issuance after transaction are Disponent?",
-        "evidence": "'POPLATEK PO OBRATU' stands for issuance after transaction",
-        "SQL": "SELECT T2.client_id FROM account AS T1 INNER JOIN disp AS T2 ON T1.account_id = T2.account_id WHERE T1.frequency = 'POPLATEK PO OBRATU' AND T2.type = 'DISPONENT'",
-        "difficulty": "simple"
     },
     {
         "question_id": 98,
@@ -158,22 +190,6 @@
         "evidence": "TR004 is the molecule id; element = 'cl' means Chlorine; element = 'c' means Carbon; element = 'h' means Hydrogen; element = 'o' means Oxygen, element = 's' means Sulfur; element = 'n' means Nitrogen, element = 'p' means Phosphorus, element = 'na' means Sodium, element = 'br' means Bromine, element = 'f' means Fluorine; element = 'i' means Iodine; element = 'sn' means Tin; element = 'pb' means Lead; element = 'te' means Tellurium; element = 'ca' means Calcium",
         "SQL": "SELECT DISTINCT T.element FROM atom AS T WHERE T.molecule_id = 'TR004'",
         "difficulty": "challenging"
-    },
-    {
-        "question_id": 257,
-        "db_id": "toxicology",
-        "question": "List down atom id2 for atoms with element sulfur.",
-        "evidence": "element sulfur refers to element = 's'",
-        "SQL": "SELECT DISTINCT T2.atom_id2 FROM atom AS T1 INNER JOIN connected AS T2 ON T1.atom_id = T2.atom_id WHERE T1.element = 's'",
-        "difficulty": "simple"
-    },
-    {
-        "question_id": 267,
-        "db_id": "toxicology",
-        "question": "List down the bond type for molecules from molecule id TR000 to TR050.",
-        "evidence": "double bond refers to bond_type = ' = '; single bond refers to bond_type = '-'; triple bond refers to bond_type = '#';",
-        "SQL": "SELECT T2.molecule_id, T2.bond_type FROM molecule AS T1 INNER JOIN bond AS T2 ON T1.molecule_id = T2.molecule_id WHERE T1.molecule_id BETWEEN 'TR000' AND 'TR050'",
-        "difficulty": "moderate"
     },
     {
         "question_id": 286,
@@ -309,22 +325,6 @@
         "question": "How many color cards with no borders have been ranked higher than 12000 on EDHRec?",
         "evidence": "color cards with no borders refers to borderColor = 'borderless'; ranked higher than 12000 on EDHRec refers to edhrecRank > 12000",
         "SQL": "SELECT COUNT(id) FROM cards WHERE edhrecRank > 12000 AND borderColor = 'borderless'",
-        "difficulty": "simple"
-    },
-    {
-        "question_id": 423,
-        "db_id": "card_games",
-        "question": "Please provide the ids of top three powerful pairs of Kingdom Foil and Kingdom Cards sorted by Kingdom Foil id in alphabetical order.",
-        "evidence": "poweful refers to cardKingdomFoilId is not null AND cardKingdomId is not null",
-        "SQL": "SELECT cardKingdomFoilId, cardKingdomId FROM cards WHERE cardKingdomFoilId IS NOT NULL AND cardKingdomId IS NOT NULL ORDER BY cardKingdomFoilId LIMIT 3",
-        "difficulty": "simple"
-    },
-    {
-        "question_id": 436,
-        "db_id": "card_games",
-        "question": "How many cards have frame effect as extendedart? List out the id of those cards.",
-        "evidence": "\nframe effect as extendedart refers to frameEffects = 'extendedart'\n",
-        "SQL": "SELECT id FROM cards WHERE frameEffects = 'extendedart' GROUP BY id",
         "difficulty": "simple"
     },
     {

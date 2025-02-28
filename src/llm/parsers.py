@@ -3,12 +3,11 @@ import re
 import logging
 from ast import literal_eval
 from typing import Any, Dict, List, Tuple
-
 from langchain_core.output_parsers.base import BaseOutputParser
 from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_core.exceptions import OutputParserException
-
+    
 class PythonListOutputParser(BaseOutputParser):
     """Parses output embedded in markdown code blocks containing Python lists."""
     
@@ -16,20 +15,32 @@ class PythonListOutputParser(BaseOutputParser):
         super().__init__(**kwargs)
 
     def parse(self, output: str) -> Any:
-        """
-        Parses the output to extract Python list content from markdown.
-
-        Args:
-            output (str): The output string containing Python list.
-
-        Returns:
-            Any: The parsed Python list.
-        """
-        logging.debug(f"Parsing output with PythonListOutputParser: {output}")
-        if "```python" in output:
-            output = output.split("```python")[1].split("```")[0]
-        output = re.sub(r"^\s+", "", output)
-        return eval(output)  # Note: Using eval is potentially unsafe, consider using ast.literal_eval if possible.
+        # Extract the list portion using more precise pattern matching
+        list_match = re.search(
+            r'(?:Assistant:|Response:)\s*(\[.*?\])',  # Match list after "Assistant:"
+            output, 
+            re.DOTALL
+        )
+        
+        if not list_match:
+            raise ValueError("No valid list found in the output")
+            
+        list_str = list_match.group(1).strip()
+        
+        # Clean up common formatting issues
+        list_str = re.sub(r",\s*]", "]", list_str)  # Fix trailing commas
+        list_str = re.sub(r"\s+", " ", list_str)    # Collapse whitespace
+        
+        # Handle smart quotes if present
+        list_str = list_str.replace("“", '"').replace("”", '"')
+        
+        logging.debug(f"Cleaned list string: {list_str}")
+        
+        try:
+            return literal_eval(list_str)
+        except (SyntaxError, ValueError) as e:
+            logging.error(f"Failed to parse list: {list_str}")
+            raise ValueError(f"Invalid list syntax: {e}") from e
 
 class FilterColumnOutput(BaseModel):
     """Model for filter column output."""

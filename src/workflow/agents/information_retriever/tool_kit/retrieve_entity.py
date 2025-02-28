@@ -13,13 +13,13 @@ GCP_PROJECT = os.getenv("GCP_PROJECT")
 GCP_REGION = os.getenv("GCP_REGION")
 GCP_CREDENTIALS = os.getenv("GCP_CREDENTIALS")
 
-if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
-    aiplatform.init(
-    project=GCP_PROJECT,
-    location=GCP_REGION,
-    credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS)
-    )
-    vertexai.init(project=GCP_PROJECT, location=GCP_REGION, credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS))
+# if GCP_CREDENTIALS and GCP_PROJECT and GCP_REGION:
+#     aiplatform.init(
+#     project=GCP_PROJECT,
+#     location=GCP_REGION,
+#     credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS)
+#     )
+#     vertexai.init(project=GCP_PROJECT, location=GCP_REGION, credentials=service_account.Credentials.from_service_account_file(GCP_CREDENTIALS))
 
 from runner.database_manager import DatabaseManager
 from workflow.system_state import SystemState
