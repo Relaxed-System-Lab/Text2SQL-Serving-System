@@ -68,9 +68,7 @@ class RetrieveContext(Tool):
             evidence_based_query = f"{evidence} {keyword}"
             
             retrieved_question_based_query = DatabaseManager().query_vector_db(question_based_query, top_k=top_k)
-            print(f"retrieved_question_based_query: {retrieved_question_based_query}")
             retrieved_evidence_based_query = DatabaseManager().query_vector_db(evidence_based_query, top_k=top_k)
-            print(f"retrieved_evidence_based_query: {retrieved_evidence_based_query}")
             
             tables_with_descriptions = self._add_description(tables_with_descriptions, retrieved_question_based_query)
             tables_with_descriptions = self._add_description(tables_with_descriptions, retrieved_evidence_based_query)

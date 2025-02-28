@@ -39,9 +39,9 @@ class GenerateUnitTest(Tool):
         formatted_candidates = ""
         clusters = self.execution_based_clustering(target_SQL_meta_infos)
         self.candidates = target_SQL_meta_infos
-        if len(clusters) == 1:
-            state.unit_tests["unit_test_generation"] = []
-            return
+        # if len(clusters) == 1:
+        #     state.unit_tests["unit_test_generation"] = []
+        #     return
         index = 0
         for key, candidate_queries in clusters.items():
             formatted_candidates += f"Cluster #{index+1}: \n"
