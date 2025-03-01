@@ -1,6 +1,6 @@
 source .env
 data_mode='dev' # Options: 'dev', 'train' 
-data_path="./data/dev/sub_sampled_bird_dev_set.json" # UPDATE THIS WITH THE PATH TO THE TARGET DATASET
+data_path="./data/dev/dev_tied_append.json" # UPDATE THIS WITH THE PATH TO THE TARGET DATASET
 
 config="./run/configs/CHESS_IR_CG_UT.yaml"
 

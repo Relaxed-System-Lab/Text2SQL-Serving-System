@@ -3,7 +3,7 @@ import json
 from threading import Lock
 from pathlib import Path
 from typing import Any, List, Dict, Union
-
+from llm.engine_configs import tool_count_tokens
 from runner.task import Task
 
 class Logger:
@@ -82,7 +82,7 @@ class Logger:
         else:
             log_method(message)
 
-    def log_conversation(self, conversations: List[Dict[str, Any]]):
+    def log_conversation(self, time_cost, conversations: List[Dict[str, Any]]):
         """
         Logs conversations to a file.
 
@@ -96,12 +96,20 @@ class Logger:
                 for conversation in conversations:
                     text = conversation["text"]
                     file.write(f"############################## {conversation['from']} at step {conversation['step']} ##############################\n\n")
+                    if conversation['from'] == 'AI':
+                        file.write(f'######The time cost is: {time_cost}######\n\n')
                     if isinstance(text, str):
+                        token_count = tool_count_tokens(text)
+                        file.write(f'######The token count is: {token_count}######\n\n')
                         file.write(text)
                     elif isinstance(text, (list, dict)):
                         formatted_text = json.dumps(text, indent=4)
+                        token_count = tool_count_tokens(formatted_text)
+                        file.write(f'######The token count is: {token_count}######\n\n')
                         file.write(formatted_text)
                     elif isinstance(text, bool):
+                        token_count = tool_count_tokens(str(text))
+                        file.write(f'######The token count is: {token_count}######\n\n')                        
                         file.write(str(text))
                     file.write("\n\n")
 

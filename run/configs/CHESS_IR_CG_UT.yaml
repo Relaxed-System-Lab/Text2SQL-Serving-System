@@ -48,12 +48,12 @@ team_agents:
           engine_name: 'tablegpt-tool'
           temperature: 0.8
         parser_name: 'generate_unit_tests'
-        unit_test_count: 1
+        unit_test_count: 5
         sampling_count: 1
 
       evaluate:
         template_name: 'evaluate'
         engine_config:
-          engine_name: 'tablegpt-tool'
+          engine_name: 'llama-fixing'
           temperature: 0.0
         parser_name: 'evaluate'

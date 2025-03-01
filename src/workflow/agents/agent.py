@@ -87,7 +87,7 @@ class Agent:
         messages.append({"role": "user", "content": f"The following tools have been called in order: \n{str(self.chat_history)}\nThe SQL written history are given below: \n{sql_history}\n"})
 
         llm_chain = get_llm_chain(engine_name=self.config["engine"], temperature=0)
-        response = call_engine(message=messages, engine=llm_chain)
+        response = call_engine(name=self.name, message=messages, engine=llm_chain)
         return response
         
     def get_tools_description(self) -> str:

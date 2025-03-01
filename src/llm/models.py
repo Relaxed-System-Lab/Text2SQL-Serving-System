@@ -1,5 +1,5 @@
 from typing import Any, Dict, List
-
+import time
 from langchain_core.exceptions import OutputParserException
 from langchain.output_parsers import OutputFixingParser
 
@@ -65,9 +65,8 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
     logger = Logger()
     for attempt in range(max_attempts):
         try:
+            start_time = time.time()
             # chain = prompt | engine | parser
-            fixing_engine = get_llm_chain("llama-agent")
-            robust_parser = OutputFixingParser.from_llm(parser=parser, llm=fixing_engine)
             chain = prompt | engine
             prompt_text = prompt.invoke(request_kwargs).messages[0].content
             output = chain.invoke(request_kwargs)
@@ -80,8 +79,10 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
                 if output.content.strip() == "":    
                     # engine = get_llm_chain("gemini-1.5-flash")
                     raise OutputParserException("Empty output")
-            output = robust_parser.invoke(output)
-            logger.log_conversation(
+            output = parser.invoke(output)
+            end_time = time.time()
+            time_cost = end_time - start_time
+            logger.log_conversation(time_cost, 
                 [
                     {
                         "text": prompt_text,
@@ -98,6 +99,8 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
             return output
         except OutputParserException as e:
             logger.log(f"OutputParserException: {e}", "warning")
+            fixing_engine = get_llm_chain("llama-fixing")
+            parser = OutputFixingParser.from_llm(parser=parser, llm=fixing_engine)
             if attempt == max_attempts - 1:
                 logger.log(f"call_chain: {e}", "error")
                 raise e
@@ -108,6 +111,8 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
             #     time.sleep(sleep_time)
             # else:
             logger.log(f"Failed to invoke the chain {attempt + 1} times.\n{type(e)} <{e}>\n", "error")
+            fixing_engine = get_llm_chain("llama-fixing")
+            parser = OutputFixingParser.from_llm(parser=parser, llm=fixing_engine)
             raise e
 
 def async_llm_chain_call(
@@ -160,11 +165,12 @@ def async_llm_chain_call(
 
     return grouped_results
 
-def call_engine(message: str, engine: Any, max_attempts: int = 12, backoff_base: int = 2, jitter_max: int = 60) -> Any:
+def call_engine(name: str, message: str, engine: Any, max_attempts: int = 12, backoff_base: int = 2, jitter_max: int = 60) -> Any:
     """
     Calls the LLM chain with exponential backoff and jitter on failure.
 
     Args:
+        name (str): The agent name of the agent that makes the call.
         message (str): The message to be passed to the chain.
         engine (Any): The engine to be used in the chain.
         max_attempts (int, optional): The maximum number of attempts. Defaults to 12.
@@ -180,7 +186,24 @@ def call_engine(message: str, engine: Any, max_attempts: int = 12, backoff_base:
     logger = Logger()
     for attempt in range(max_attempts):
         try:
+            start_time = time.time()
             output = engine.invoke(message)
+            end_time = time.time()
+            time_cost = end_time - start_time
+            logger.log_conversation(time_cost, 
+                [
+                    {
+                        "text": engine.format_input(message),
+                        "from": "Human",
+                        "step": 'Agent '+name
+                    },
+                    {
+                        "text": output,
+                        "from": "AI",
+                        "step": 'Agent '+name
+                    }
+                ]
+            )
             return output.content
         except Exception as e:
             # if attempt < max_attempts - 1:
