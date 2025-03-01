@@ -145,20 +145,6 @@ def create_local_model(model_path, temperature=0.1):
     )
     return CustomHuggingFacePipeline(pipeline=hf_pipeline)
 
-def tool_count_tokens(self, input_data):
-    """
-    Count the number of tokens in a string or JSON file using a tokenizer.
-
-    Args:
-        input_data (str): A string.
-
-    Returns:
-        int: Number of tokens.
-    """
-    tokenizer = AutoTokenizer.from_pretrained(model_path2)
-    tokens = tokenizer.tokenize(input_data)
-    return len(tokens)
-
 
 ENGINE_CONFIGS: Dict[str, Dict[str, Any]] = {
     "llama-agent": {

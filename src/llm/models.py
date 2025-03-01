@@ -82,7 +82,7 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
             output = parser.invoke(output)
             end_time = time.time()
             time_cost = end_time - start_time
-            logger.log_conversation(time_cost, 
+            logger.log_conversation(engine, time_cost, 
                 [
                     {
                         "text": prompt_text,
@@ -190,7 +190,7 @@ def call_engine(name: str, message: str, engine: Any, max_attempts: int = 12, ba
             output = engine.invoke(message)
             end_time = time.time()
             time_cost = end_time - start_time
-            logger.log_conversation(time_cost, 
+            logger.log_conversation(engine, time_cost, 
                 [
                     {
                         "text": engine.format_input(message),
@@ -198,7 +198,7 @@ def call_engine(name: str, message: str, engine: Any, max_attempts: int = 12, ba
                         "step": 'Agent '+name
                     },
                     {
-                        "text": output,
+                        "text": output.content,
                         "from": "AI",
                         "step": 'Agent '+name
                     }
