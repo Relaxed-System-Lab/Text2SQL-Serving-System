@@ -1,6 +1,6 @@
 ** Instructions: **
 
-Given the following question database schema, and candidate responses, generate a set of {UNIT_TEST_CAP} unit tests that would evaluate the correctness of SQL queries that would answer the question.
+Given the following question database schema, and candidate responses, generate a set of only {UNIT_TEST_CAP} unit tests that would evaluate the correctness of SQL queries that would answer the question.
 Unit tests should be designed in a way that distinguish the candidate responses from each other.
 
 - The unit tests should cover various aspects of the question and ensure comprehensive evaluation. 
@@ -38,5 +38,5 @@ Question: {QUESTION} (Hint: {HINT})
 ** Output Format: **
 <Thinking> Your step by step reasoning here. </Thinking>
 <Answer>
-output should be only a list of strings (e.g. ['unit test #1', 'unit test #2', 'unit test #3']).
+output should be only a list of strings (e.g. ['unit test #1', 'unit test #2']).
 </Answer>

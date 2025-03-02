@@ -47,7 +47,7 @@ Each configuration includes a constructor, parameters, and an optional preproces
 model_path1='../models/models--meta-llama--Llama-3.1-70B-Instruct/snapshots/945c8663693130f8be2ee66210e062158b2a9693'
 model_path2='../models/models--tablegpt--TableGPT2-7B/snapshots/9de1c2116151f6ccc6915616f625bb9c365dd9ba'
 model_path3='../models/models--meta-llama--Llama-3.1-8B/snapshots/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b'
-cuda_visible='0,1,2,3'
+cuda_visible='4,5,6,7'
 os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
 
 class CustomHuggingFacePipeline(HuggingFacePipeline):
@@ -129,19 +129,21 @@ def create_local_model(model_path, temperature=0.1):
     os.environ["HF_HOME"] = model_path
     os.environ["HF_HUB_CACHE"] = model_path
     tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=False, padding_side="left")
-    model = AutoModelForCausalLM.from_pretrained(model_path, device_map="auto", torch_dtype=torch.float16).eval()
     tokenizer.pad_token = tokenizer.bos_token
+    model = AutoModelForCausalLM.from_pretrained(
+        model_path,
+        device_map="auto",
+        torch_dtype="auto"
+    ).eval()
+
     hf_pipeline = pipeline(
         "text-generation",
         model=model,
         tokenizer=tokenizer,
-        torch_dtype=torch.float16,
         max_new_tokens=1000,
-        # do_sample=False,  # Enable greedy decoding
-        # top_k=None,       # Disable top-k sampling
         top_p=0.9,
         temperature=temperature,
-        eos_token_id=tokenizer.eos_token_id  # Default value (ignored when do_sample=False)
+        eos_token_id=tokenizer.eos_token_id
     )
     return CustomHuggingFacePipeline(pipeline=hf_pipeline)
 

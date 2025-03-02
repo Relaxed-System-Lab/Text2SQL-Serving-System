@@ -195,12 +195,12 @@ def call_engine(name: str, message: str, engine: Any, max_attempts: int = 12, ba
                     {
                         "text": engine.format_input(message),
                         "from": "Human",
-                        "step": 'Agent '+name
+                        "step": name
                     },
                     {
                         "text": output.content,
                         "from": "AI",
-                        "step": 'Agent '+name
+                        "step": name
                     }
                 ]
             )

@@ -54,6 +54,6 @@ team_agents:
       evaluate:
         template_name: 'evaluate'
         engine_config:
-          engine_name: 'llama-fixing'
+          engine_name: 'llama-agent'
           temperature: 0.0
         parser_name: 'evaluate'

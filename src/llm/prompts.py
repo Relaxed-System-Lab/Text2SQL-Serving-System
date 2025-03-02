@@ -61,6 +61,7 @@ def get_prompt(template_name: str = None, template: str = None) -> ChatPromptTem
         prompt=PromptTemplate(
             template=template,
             input_variables=input_variables,
+            validate_template=True
         )
     )
     

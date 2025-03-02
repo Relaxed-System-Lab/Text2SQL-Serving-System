@@ -1,11 +1,12 @@
 from typing import Dict, List
 
-from llm.models import async_llm_chain_call, get_llm_chain
+from llm.models import async_llm_chain_call, get_llm_chain, call_engine
 from llm.prompts import get_prompt
 from llm.parsers import get_parser
 from workflow.system_state import SystemState
 from workflow.sql_meta_info import SQLMetaInfo
 from workflow.agents.tool import Tool
+from langchain.output_parsers import OutputFixingParser
 
 class Evaluate(Tool):
     """
@@ -79,17 +80,27 @@ class Evaluate(Tool):
                 continue
                 
         try:
-            response = async_llm_chain_call(
-                prompt=get_prompt(template_name=self.template_name),
-                engine=get_llm_chain(**self.engine_config),
-                parser=get_parser(self.parser_name),
-                request_list=request_list,
-                step=self.tool_name
-            )
-            response = [r[0] for r in response]
+            response = []
+            for request_kwargs in request_list:
+                prompt=get_prompt(template_name=self.template_name)
+                prompt_text = prompt.invoke(request_kwargs).messages[0].content
+                engine=get_llm_chain(**self.engine_config)
+                fixing_engine = get_llm_chain("llama-fixing")
+                parser=get_parser(self.parser_name)
+                robust_parser = OutputFixingParser.from_llm(parser=parser, llm=fixing_engine)
+
+                messages = [{"role": "user", "content": prompt_text}]
+                output = call_engine(name='evaluate', message=messages, engine=engine)
+                output = robust_parser.invoke(output)
+                response.append(output)
         except Exception as e:
             print(f"Error in Checker while getting response: {e}")
             response = []
+            # In case the model output nothing, just use the first candidate
+            state.SQL_meta_infos[self.SQL_id].append(target_SQL_meta_infos[0])
+            self.scores = [1]
+            self.comparison_matrix = [[1]]
+            return 
         comparison_matrix = []
         for item in response:
             # if self.test_case_filtering_based_on_inter_cluster_variance(candidates_clusters, item["scores"], target_SQL_meta_infos):
