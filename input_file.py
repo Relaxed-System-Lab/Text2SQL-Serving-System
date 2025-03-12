@@ -48,7 +48,8 @@ def collect_logs(logs_directory):
         if log_file.endswith(".log"):
             log_file_path = os.path.join(logs_directory, log_file)
             steps = parse_log_file(log_file_path)
-            logs_data.extend(steps)
+            log_name = os.path.splitext(log_file)[0]
+            logs_data.append({log_name: steps})
     
     return logs_data
 

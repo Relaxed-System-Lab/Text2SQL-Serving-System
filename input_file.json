@@ -1,0 +1,4302 @@
+[
+    {
+        "82_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 651,
+                "output_length": 23
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14545,
+                "output_length": 443
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10679,
+                "output_length": 369
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 857,
+                "output_length": 93
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 730,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 732,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 731,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 732,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 738,
+                "output_length": 88
+            },
+            {
+                "step": "evaluate",
+                "input_length": 745,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "71_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 668,
+                "output_length": 45
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14829,
+                "output_length": 527
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10963,
+                "output_length": 418
+            },
+            {
+                "step": "revise",
+                "input_length": 8765,
+                "output_length": 61
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1128,
+                "output_length": 86
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 963,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 979,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 960,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 971,
+                "output_length": 91
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "39_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 678,
+                "output_length": 45
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14646,
+                "output_length": 731
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10780,
+                "output_length": 485
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 991,
+                "output_length": 109
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 825,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 828,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 808,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 818,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 824,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "53_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 28
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14128,
+                "output_length": 541
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10262,
+                "output_length": 398
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 723,
+                "output_length": 113
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 613,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 610,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 608,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 610,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 607,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 618,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "78_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14127,
+                "output_length": 566
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10261,
+                "output_length": 352
+            },
+            {
+                "step": "revise",
+                "input_length": 8105,
+                "output_length": 77
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 765,
+                "output_length": 75
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 624,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 633,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 623,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 634,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "56_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 37
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 647,
+                "output_length": 29
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14490,
+                "output_length": 561
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10624,
+                "output_length": 422
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 818,
+                "output_length": 45
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 698,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 695,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 708,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "63_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 682,
+                "output_length": 57
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14321,
+                "output_length": 672
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10455,
+                "output_length": 591
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1542,
+                "output_length": 81
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1369,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1371,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1360,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1372,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "58_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 653,
+                "output_length": 35
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14698,
+                "output_length": 402
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10832,
+                "output_length": 397
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 894,
+                "output_length": 29
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 742,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 752,
+                "output_length": 83
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "44_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14152,
+                "output_length": 809
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10286,
+                "output_length": 480
+            },
+            {
+                "step": "revise",
+                "input_length": 8120,
+                "output_length": 84
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1082,
+                "output_length": 132
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 915,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 926,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 921,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 912,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 914,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 916,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 926,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "88_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14145,
+                "output_length": 834
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10279,
+                "output_length": 549
+            },
+            {
+                "step": "revise",
+                "input_length": 8134,
+                "output_length": 1010
+            },
+            {
+                "step": "revise",
+                "input_length": 8134,
+                "output_length": 69
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 896,
+                "output_length": 100
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 775,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 784,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 790,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 782,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "51_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 650,
+                "output_length": 25
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14541,
+                "output_length": 608
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10675,
+                "output_length": 427
+            },
+            {
+                "step": "revise",
+                "input_length": 8505,
+                "output_length": 81
+            },
+            {
+                "step": "revise",
+                "input_length": 8505,
+                "output_length": 126
+            },
+            {
+                "step": "revise",
+                "input_length": 8513,
+                "output_length": 13
+            },
+            {
+                "step": "revise",
+                "input_length": 8513,
+                "output_length": 81
+            },
+            {
+                "step": "revise",
+                "input_length": 8513,
+                "output_length": 81
+            },
+            {
+                "step": "revise",
+                "input_length": 8513,
+                "output_length": 81
+            },
+            {
+                "step": "revise",
+                "input_length": 8513,
+                "output_length": 97
+            },
+            {
+                "step": "revise",
+                "input_length": 8529,
+                "output_length": 97
+            },
+            {
+                "step": "revise",
+                "input_length": 8529,
+                "output_length": 107
+            },
+            {
+                "step": "revise",
+                "input_length": 8539,
+                "output_length": 1009
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "20_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14130,
+                "output_length": 626
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10264,
+                "output_length": 401
+            },
+            {
+                "step": "revise",
+                "input_length": 8064,
+                "output_length": 45
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 728,
+                "output_length": 99
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 613,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 613,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 613,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 614,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 620,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "64_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 648,
+                "output_length": 33
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14601,
+                "output_length": 514
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10735,
+                "output_length": 475
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 835,
+                "output_length": 86
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 707,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 714,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 726,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 709,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 724,
+                "output_length": 67
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "80_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 651,
+                "output_length": 22
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14398,
+                "output_length": 421
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10532,
+                "output_length": 370
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 949,
+                "output_length": 87
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 797,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 796,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 797,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 807,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 809,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "3_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 648,
+                "output_length": 29
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14648,
+                "output_length": 621
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10782,
+                "output_length": 476
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "17_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 655,
+                "output_length": 36
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14211,
+                "output_length": 746
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10345,
+                "output_length": 447
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 993,
+                "output_length": 127
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1018,
+                "output_length": 56
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1018,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1002,
+                "output_length": 85
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1007,
+                "output_length": 73
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1011,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "50_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 26
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 656,
+                "output_length": 37
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14459,
+                "output_length": 626
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10593,
+                "output_length": 429
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "14_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 663,
+                "output_length": 43
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14714,
+                "output_length": 554
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10848,
+                "output_length": 431
+            },
+            {
+                "step": "revise",
+                "input_length": 8677,
+                "output_length": 94
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 977,
+                "output_length": 125
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 816,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 817,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 820,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 811,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 831,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 825,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "84_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 27
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 646,
+                "output_length": 21
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14294,
+                "output_length": 594
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10428,
+                "output_length": 454
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 785,
+                "output_length": 116
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 680,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 681,
+                "output_length": 91
+            },
+            {
+                "step": "evaluate",
+                "input_length": 678,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 686,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 676,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 688,
+                "output_length": 254
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "61_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 667,
+                "output_length": 43
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14438,
+                "output_length": 554
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10572,
+                "output_length": 425
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 903,
+                "output_length": 75
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 779,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 774,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 773,
+                "output_length": 136
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "41_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 665,
+                "output_length": 39
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14718,
+                "output_length": 948
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10852,
+                "output_length": 498
+            },
+            {
+                "step": "revise",
+                "input_length": 8728,
+                "output_length": 106
+            },
+            {
+                "step": "revise",
+                "input_length": 8723,
+                "output_length": 120
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1381,
+                "output_length": 120
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1218,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1223,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1220,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1220,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1219,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1227,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "57_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14131,
+                "output_length": 579
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10265,
+                "output_length": 401
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 828,
+                "output_length": 72
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 687,
+                "output_length": 139
+            },
+            {
+                "step": "evaluate",
+                "input_length": 683,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 684,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 693,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "42_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 642,
+                "output_length": 21
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14324,
+                "output_length": 557
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10458,
+                "output_length": 412
+            },
+            {
+                "step": "revise",
+                "input_length": 8277,
+                "output_length": 78
+            },
+            {
+                "step": "revise",
+                "input_length": 8292,
+                "output_length": 80
+            },
+            {
+                "step": "revise",
+                "input_length": 8295,
+                "output_length": 53
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 776,
+                "output_length": 73
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 664,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 661,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 664,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 671,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "13_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 47
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 654,
+                "output_length": 48
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14313,
+                "output_length": 656
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10447,
+                "output_length": 460
+            },
+            {
+                "step": "revise",
+                "input_length": 8278,
+                "output_length": 91
+            },
+            {
+                "step": "revise",
+                "input_length": 8272,
+                "output_length": 77
+            },
+            {
+                "step": "revise",
+                "input_length": 8295,
+                "output_length": 100
+            },
+            {
+                "step": "revise",
+                "input_length": 8281,
+                "output_length": 77
+            },
+            {
+                "step": "revise",
+                "input_length": 8281,
+                "output_length": 77
+            },
+            {
+                "step": "revise",
+                "input_length": 8304,
+                "output_length": 96
+            },
+            {
+                "step": "revise",
+                "input_length": 8281,
+                "output_length": 77
+            },
+            {
+                "step": "revise",
+                "input_length": 8281,
+                "output_length": 99
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1087,
+                "output_length": 158
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 940,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 942,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 951,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 934,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 937,
+                "output_length": 63
+            },
+            {
+                "step": "evaluate",
+                "input_length": 934,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 944,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "52_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 27
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 668,
+                "output_length": 49
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14116,
+                "output_length": 769
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10250,
+                "output_length": 507
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 962,
+                "output_length": 127
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 822,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 824,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 831,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 830,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 820,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 831,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "69_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 662,
+                "output_length": 37
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14536,
+                "output_length": 384
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10670,
+                "output_length": 340
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 984,
+                "output_length": 47
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 864,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 861,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 873,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "19_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14126,
+                "output_length": 527
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10260,
+                "output_length": 388
+            },
+            {
+                "step": "revise",
+                "input_length": 8077,
+                "output_length": 19
+            },
+            {
+                "step": "revise",
+                "input_length": 8077,
+                "output_length": 68
+            },
+            {
+                "step": "revise",
+                "input_length": 8084,
+                "output_length": 75
+            },
+            {
+                "step": "revise",
+                "input_length": 8092,
+                "output_length": 70
+            },
+            {
+                "step": "revise",
+                "input_length": 8087,
+                "output_length": 77
+            },
+            {
+                "step": "revise",
+                "input_length": 8094,
+                "output_length": 10
+            },
+            {
+                "step": "revise",
+                "input_length": 8094,
+                "output_length": 77
+            },
+            {
+                "step": "revise",
+                "input_length": 8094,
+                "output_length": 94
+            },
+            {
+                "step": "revise",
+                "input_length": 8111,
+                "output_length": 1010
+            },
+            {
+                "step": "revise",
+                "input_length": 8111,
+                "output_length": 94
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 793,
+                "output_length": 99
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 656,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 649,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 651,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 652,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 651,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 663,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "29_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 648,
+                "output_length": 26
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14278,
+                "output_length": 434
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10412,
+                "output_length": 437
+            },
+            {
+                "step": "revise",
+                "input_length": 8212,
+                "output_length": 1010
+            },
+            {
+                "step": "revise",
+                "input_length": 8232,
+                "output_length": 12
+            },
+            {
+                "step": "revise",
+                "input_length": 8212,
+                "output_length": 37
+            },
+            {
+                "step": "revise",
+                "input_length": 8212,
+                "output_length": 67
+            },
+            {
+                "step": "revise",
+                "input_length": 8232,
+                "output_length": 64
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1012,
+                "output_length": 98
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 898,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 902,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 902,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 893,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 906,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "66_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 32
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 669,
+                "output_length": 46
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14445,
+                "output_length": 760
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10579,
+                "output_length": 514
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 844,
+                "output_length": 71
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 710,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 700,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 700,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 712,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "8_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14133,
+                "output_length": 634
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10267,
+                "output_length": 571
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 759,
+                "output_length": 99
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 647,
+                "output_length": 148
+            },
+            {
+                "step": "evaluate",
+                "input_length": 645,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 654,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 648,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "73_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 26
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 657,
+                "output_length": 42
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14586,
+                "output_length": 724
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10720,
+                "output_length": 471
+            },
+            {
+                "step": "revise",
+                "input_length": 8563,
+                "output_length": 77
+            },
+            {
+                "step": "revise",
+                "input_length": 8552,
+                "output_length": 75
+            },
+            {
+                "step": "revise",
+                "input_length": 8554,
+                "output_length": 24
+            },
+            {
+                "step": "revise",
+                "input_length": 8552,
+                "output_length": 77
+            },
+            {
+                "step": "revise",
+                "input_length": 8554,
+                "output_length": 79
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1020,
+                "output_length": 126
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 896,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 900,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 914,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 897,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 902,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "70_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 641,
+                "output_length": 26
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14718,
+                "output_length": 606
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10852,
+                "output_length": 513
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1267,
+                "output_length": 117
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1158,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1156,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1156,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1155,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1150,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1163,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "30_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 31
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 657,
+                "output_length": 34
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14298,
+                "output_length": 434
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10432,
+                "output_length": 438
+            },
+            {
+                "step": "revise",
+                "input_length": 8227,
+                "output_length": 58
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 960,
+                "output_length": 96
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 803,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 808,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 808,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 807,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 814,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "38_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 651,
+                "output_length": 35
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14299,
+                "output_length": 721
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10433,
+                "output_length": 388
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 947,
+                "output_length": 98
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 846,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 852,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 860,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 853,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "75_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 652,
+                "output_length": 29
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14606,
+                "output_length": 831
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10740,
+                "output_length": 406
+            },
+            {
+                "step": "revise",
+                "input_length": 8588,
+                "output_length": 76
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1153,
+                "output_length": 88
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1115,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1119,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1120,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1121,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "5_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 47
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14141,
+                "output_length": 632
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10275,
+                "output_length": 478
+            },
+            {
+                "step": "revise",
+                "input_length": 8102,
+                "output_length": 60
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 739,
+                "output_length": 84
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 618,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 619,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 613,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 621,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "21_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 26
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14137,
+                "output_length": 688
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10271,
+                "output_length": 439
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 853,
+                "output_length": 82
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 728,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 727,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 730,
+                "output_length": 67
+            },
+            {
+                "step": "evaluate",
+                "input_length": 723,
+                "output_length": 70
+            },
+            {
+                "step": "evaluate",
+                "input_length": 738,
+                "output_length": 162
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "60_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 664,
+                "output_length": 41
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14516,
+                "output_length": 628
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10650,
+                "output_length": 408
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1075,
+                "output_length": 63
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 971,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 950,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 963,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "2_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 661,
+                "output_length": 38
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14503,
+                "output_length": 494
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10637,
+                "output_length": 451
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1052,
+                "output_length": 103
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 897,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 907,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 908,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 902,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "18_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14131,
+                "output_length": 753
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10265,
+                "output_length": 563
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 964,
+                "output_length": 83
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 844,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 844,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 850,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 839,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 855,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "22_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 639,
+                "output_length": 21
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14170,
+                "output_length": 550
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10304,
+                "output_length": 533
+            },
+            {
+                "step": "revise",
+                "input_length": 8125,
+                "output_length": 64
+            },
+            {
+                "step": "revise",
+                "input_length": 8128,
+                "output_length": 75
+            },
+            {
+                "step": "revise",
+                "input_length": 8136,
+                "output_length": 75
+            },
+            {
+                "step": "revise",
+                "input_length": 8125,
+                "output_length": 37
+            },
+            {
+                "step": "revise",
+                "input_length": 8136,
+                "output_length": 75
+            },
+            {
+                "step": "revise",
+                "input_length": 8136,
+                "output_length": 75
+            },
+            {
+                "step": "revise",
+                "input_length": 8136,
+                "output_length": 75
+            },
+            {
+                "step": "revise",
+                "input_length": 8136,
+                "output_length": 75
+            },
+            {
+                "step": "revise",
+                "input_length": 8136,
+                "output_length": 79
+            },
+            {
+                "step": "revise",
+                "input_length": 8140,
+                "output_length": 79
+            },
+            {
+                "step": "revise",
+                "input_length": 8140,
+                "output_length": 92
+            },
+            {
+                "step": "revise",
+                "input_length": 8153,
+                "output_length": 92
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 951,
+                "output_length": 116
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 816,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 818,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 815,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 814,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 813,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 823,
+                "output_length": 68
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "6_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 665,
+                "output_length": 35
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14450,
+                "output_length": 700
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10584,
+                "output_length": 456
+            },
+            {
+                "step": "revise",
+                "input_length": 8408,
+                "output_length": 59
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "54_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14132,
+                "output_length": 496
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10266,
+                "output_length": 331
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 815,
+                "output_length": 69
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 708,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 698,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 705,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 713,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "15_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 635,
+                "output_length": 17
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14188,
+                "output_length": 532
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10322,
+                "output_length": 457
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 925,
+                "output_length": 126
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 831,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 831,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 826,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 832,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 830,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "67_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14130,
+                "output_length": 678
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10264,
+                "output_length": 512
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 932,
+                "output_length": 67
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 788,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 787,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 789,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 798,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "0_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 671,
+                "output_length": 53
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14026,
+                "output_length": 455
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10160,
+                "output_length": 487
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 837,
+                "output_length": 124
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 713,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 703,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 695,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 695,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 688,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 705,
+                "output_length": 131
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "16_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 26
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14127,
+                "output_length": 766
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10261,
+                "output_length": 482
+            },
+            {
+                "step": "revise",
+                "input_length": 8066,
+                "output_length": 73
+            },
+            {
+                "step": "revise",
+                "input_length": 8099,
+                "output_length": 74
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 878,
+                "output_length": 67
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 765,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 759,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 765,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 773,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "46_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 26
+            },
+            {
+                "step": "extract_keywords",
+                "input_length": 664,
+                "output_length": 39
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14669,
+                "output_length": 736
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10803,
+                "output_length": 435
+            },
+            {
+                "step": "revise",
+                "input_length": 8604,
+                "output_length": 38
+            },
+            {
+                "step": "revise",
+                "input_length": 8604,
+                "output_length": 72
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 1312,
+                "output_length": 88
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1152,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1155,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1148,
+                "output_length": 117
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1142,
+                "output_length": 123
+            },
+            {
+                "step": "evaluate",
+                "input_length": 1159,
+                "output_length": 206
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "9_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14134,
+                "output_length": 748
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10268,
+                "output_length": 487
+            },
+            {
+                "step": "revise",
+                "input_length": 8121,
+                "output_length": 86
+            },
+            {
+                "step": "revise",
+                "input_length": 8099,
+                "output_length": 64
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 852,
+                "output_length": 78
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 731,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 739,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 731,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 740,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    },
+    {
+        "10_california_schools": [
+            {
+                "step": "Information Retriever",
+                "input_length": 301,
+                "output_length": 32
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 304,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 308,
+                "output_length": 5
+            },
+            {
+                "step": "Information Retriever",
+                "input_length": 312,
+                "output_length": 4
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 14138,
+                "output_length": 716
+            },
+            {
+                "step": "generate_candidate_llama-agent",
+                "input_length": 10272,
+                "output_length": 461
+            },
+            {
+                "step": "revise",
+                "input_length": 8124,
+                "output_length": 1010
+            },
+            {
+                "step": "revise",
+                "input_length": 8124,
+                "output_length": 81
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 271,
+                "output_length": 6
+            },
+            {
+                "step": "generate_unit_test",
+                "input_length": 813,
+                "output_length": 99
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 275,
+                "output_length": 4
+            },
+            {
+                "step": "evaluate",
+                "input_length": 699,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 700,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 700,
+                "output_length": 22
+            },
+            {
+                "step": "evaluate",
+                "input_length": 699,
+                "output_length": 22
+            },
+            {
+                "step": "unit_tester",
+                "input_length": 278,
+                "output_length": 4
+            }
+        ]
+    }
+]
