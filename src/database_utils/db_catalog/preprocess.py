@@ -4,18 +4,18 @@ import logging
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
 from langchain.schema.document import Document
-# from langchain_openai import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 # from langchain_google_vertexai import VertexAIEmbeddings
-from transformers import AutoModel, AutoTokenizer
-import torch
 from google.oauth2 import service_account
 from google.cloud import aiplatform
 import vertexai
 import sys
 from sentence_transformers import SentenceTransformer
-sys.path.append(".")
-
 from database_utils.db_catalog.csv_utils import load_tables_description
+
+sys.path.append(".")
+os.environ["HTTP_PROXY"] = "socks5://127.0.0.1:1080"
+os.environ["HTTPS_PROXY"] = "socks5://127.0.0.1:1080"
 
 load_dotenv(override=True)
 
@@ -33,35 +33,35 @@ GCP_CREDENTIALS = os.getenv("GCP_CREDENTIALS")
 
 
 # EMBEDDING_FUNCTION = VertexAIEmbeddings(model_name="text-embedding-004")#OpenAIEmbeddings(model="text-embedding-3-large")
-# EMBEDDING_FUNCTION = OpenAIEmbeddings(model="text-embedding-3-large")
-model_name = "sentence-transformers/all-mpnet-base-v2"
-local_model_path = "../models/sentence-transformers_all-mpnet-base-v2"
-cuda_visible='0,1,2,3'
-os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
+EMBEDDING_FUNCTION = OpenAIEmbeddings(model="text-embedding-3-large")
+# model_name = "sentence-transformers/all-mpnet-base-v2"
+# local_model_path = "../models/sentence-transformers_all-mpnet-base-v2"
+# cuda_visible='0,1,2,3,4,5,6'
+# os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
 
-# Download model if not exists
-if not os.path.exists(local_model_path):
-    model = SentenceTransformer(model_name)
-    model.save(local_model_path)
+# # Download model if not exists
+# if not os.path.exists(local_model_path):
+#     model = SentenceTransformer(model_name)
+#     model.save(local_model_path)
+# 
+# 
+# class SentenceTransformerEmbeddings:
+#     def __init__(self, model_path):
+#         self.model = SentenceTransformer(model_path, device="cuda")
 
+#     def embed_documents(self, texts):
+#         return self.model.encode(
+#             texts,
+#             convert_to_numpy=True,
+#             normalize_embeddings=True,
+#             show_progress_bar=False
+#         )
 
-class SentenceTransformerEmbeddings:
-    def __init__(self, model_path):
-        self.model = SentenceTransformer(model_path, device="cuda")
+#     def embed_query(self, text):
+#         return self.embed_documents([text])[0]
 
-    def embed_documents(self, texts):
-        return self.model.encode(
-            texts,
-            convert_to_numpy=True,
-            normalize_embeddings=True,
-            show_progress_bar=False
-        )
-
-    def embed_query(self, text):
-        return self.embed_documents([text])[0]
-
-# Usage
-EMBEDDING_FUNCTION = SentenceTransformerEmbeddings(local_model_path)
+# # Usage
+# EMBEDDING_FUNCTION = SentenceTransformerEmbeddings(local_model_path)
 
 
 def make_db_context_vec_db(db_directory_path: str, **kwargs) -> None:

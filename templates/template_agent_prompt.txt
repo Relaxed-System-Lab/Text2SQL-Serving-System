@@ -4,7 +4,7 @@ Your task is to {task}.
 You have access to the following tools. 
 <tools> {tools} </tools>
 
-You will be told which tool has been called ordered in a list. You will also be given the SQL written history, which would be useful if you need to decide revise SQL or not.
+You will be told which tool has been called ordered in a list.
 You job is to either determine the one tool that should be called next, or decide the task is done and no tool need to be called.
 
 1. If you determine a tool should be called next, You MUST format your response EXACTLY like this and don't output anything else:

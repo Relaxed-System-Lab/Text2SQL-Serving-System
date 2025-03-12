@@ -1,0 +1,17 @@
+Average Human Input Tokens per Step:
+Step: Information Retriever, Average Tokens: 306.25
+Step: extract_keywords, Average Tokens: 656.71
+Step: generate_candidate_llama-agent, Average Tokens: 12421.68
+Step: unit_tester, Average Tokens: 274.67
+Step: generate_unit_test, Average Tokens: 948.63
+Step: evaluate, Average Tokens: 828.54
+Step: revise, Average Tokens: 8288.49
+
+Average AI Output Tokens and Time Cost per Step:
+Step: Information Retriever, Average Time Cost: 1.65, Average Tokens: 6.59
+Step: evaluate, Average Time Cost: 4.32, Average Tokens: 30.59
+Step: extract_keywords, Average Time Cost: 4.05, Average Tokens: 35.26
+Step: generate_candidate_llama-agent, Average Time Cost: 130.50, Average Tokens: 536.06
+Step: generate_unit_test, Average Time Cost: 32.82, Average Tokens: 93.83
+Step: revise, Average Time Cost: 305.56, Average Tokens: 136.54
+Step: unit_tester, Average Time Cost: 1.94, Average Tokens: 4.67

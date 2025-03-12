@@ -1,0 +1,19 @@
+Average Human Input Tokens per Step:
+Step: Information Retriever, Average Tokens: 343.25
+Step: extract_keywords, Average Tokens: 684.83
+Step: Candidate Generator, Average Tokens: 381.16
+Step: generate_candidate_tablegpt-tool, Average Tokens: 12463.36
+Step: revise, Average Tokens: 8890.74
+Step: unit_tester, Average Tokens: 510.57
+Step: generate_unit_test, Average Tokens: 986.40
+Step: evaluate, Average Tokens: 835.74
+
+Average AI Output Tokens and Time Cost per Step:
+Step: Candidate Generator, Average Time Cost: 2.68, Average Tokens: 4.33
+Step: Information Retriever, Average Time Cost: 2.80, Average Tokens: 4.75
+Step: evaluate, Average Time Cost: 4.58, Average Tokens: 31.16
+Step: extract_keywords, Average Time Cost: 31.22, Average Tokens: 33.39
+Step: generate_candidate_tablegpt-tool, Average Time Cost: 34.40, Average Tokens: 555.74
+Step: generate_unit_test, Average Time Cost: 19.80, Average Tokens: 97.37
+Step: revise, Average Time Cost: 20.30, Average Tokens: 72.37
+Step: unit_tester, Average Time Cost: 2.60, Average Tokens: 4.70

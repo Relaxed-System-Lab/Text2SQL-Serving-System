@@ -28,30 +28,49 @@ class Agent:
         Returns:
             SystemState: The processed system state.
         """
-        
-        system_prompt = get_prompt(template_name="agent_prompt")
-        system_prompt = system_prompt.format(agent_name=self.name, 
-                                             task=self.task, 
-                                             tools=self.get_tools_description())
-        
-        try:
-            for i in range(10):
-                response = self.call_agent(system_prompt, system_state)
-                print(f"Agent {self.name} response: {response}", flush=True)
-                if self.is_done(response):
-                    print(f"Agent {self.name} done in {i}", flush=True)
-                    break
-                tool_name = self.get_next_tool_name(response)
-                tool = self.tools[tool_name]
+        if self.name == "Candidate Generator":
+            try:
+                tool = self.tools["generate_candidate"]
                 try:
                     tool_response = self.call_tool(tool, system_state)
-                    self.chat_history.append(tool_name)
                 except Exception as e:
-                    print(f"Error in tool {tool_name}: {e}")
-        except Exception as e:
-            print(f"Error in agent {self.name}: {e}")
-            
-        return system_state
+                    print(f"Error in tool {tool.tool_name}: {e}")
+                tool = self.tools["revise"]
+                for i in range(8):
+                    if tool.need_to_fix(system_state):
+                        try:
+                            tool_response = self.call_tool(tool, system_state)
+                        except Exception as e:  
+                            print(f"Error in tool {tool.tool_name}: {e}")
+                    else:
+                        print(f"Agent {self.name} done in {i}", flush=True)
+                        break
+            except Exception as e:
+                print(f"Error in agent {self.name}: {e}")
+            return system_state
+        else:
+            system_prompt = get_prompt(template_name="agent_prompt")
+            system_prompt = system_prompt.format(agent_name=self.name, 
+                                                task=self.task, 
+                                                tools=self.get_tools_description())
+            try:
+                for i in range(8):
+                    response = self.call_agent(system_prompt, system_state)
+                    print(f"Agent {self.name} response: {response}", flush=True)
+                    if self.is_done(response):
+                        print(f"Agent {self.name} done in {i}", flush=True)
+                        break
+                    tool_name = self.get_next_tool_name(response)
+                    tool = self.tools[tool_name]
+                    try:
+                        tool_response = self.call_tool(tool, system_state)
+                        self.chat_history.append(tool_name)
+                    except Exception as e:
+                        print(f"Error in tool {tool_name}: {e}")
+            except Exception as e:
+                print(f"Error in agent {self.name}: {e}")
+                
+            return system_state
 
     def call_tool(self, tool: Tool, system_state: SystemState) -> SystemState:
         """
@@ -83,8 +102,7 @@ class Agent:
         Call the agent with the given system state.
         """
         messages = [{"role": "system", "content": system_prompt}]
-        sql_history = system_state.construct_history()
-        messages.append({"role": "user", "content": f"The following tools have been called in order: \n{str(self.chat_history)}\nThe SQL written history are given below: \n{sql_history}\n"})
+        messages.append({"role": "user", "content": f"The following tools have been called in order: \n{str(self.chat_history)}\n"})
 
         llm_chain = get_llm_chain(engine_name=self.config["engine"], temperature=0)
         response = call_engine(name=self.name, message=messages, engine=llm_chain)

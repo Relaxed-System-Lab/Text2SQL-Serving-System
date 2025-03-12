@@ -111,8 +111,6 @@ def call_llm_chain(prompt: Any, engine: Any, parser: Any, request_kwargs: Dict[s
             #     time.sleep(sleep_time)
             # else:
             logger.log(f"Failed to invoke the chain {attempt + 1} times.\n{type(e)} <{e}>\n", "error")
-            fixing_engine = get_llm_chain("llama-fixing")
-            parser = OutputFixingParser.from_llm(parser=parser, llm=fixing_engine)
             raise e
 
 def async_llm_chain_call(

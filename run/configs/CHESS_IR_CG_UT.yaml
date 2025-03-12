@@ -7,7 +7,7 @@ team_agents:
       extract_keywords:
         template_name: 'extract_keywords'
         engine_config:
-          engine_name: 'tablegpt-tool'
+          engine_name: 'llama-agent'
           temperature: 0.2
         parser_name: 'python_list_output_parser'
       retrieve_entity: {}
@@ -21,13 +21,13 @@ team_agents:
         generator_configs:
           - template_name: 'generate_candidate_one'
             engine_config:
-              engine_name: 'tablegpt-tool'
+              engine_name: 'llama-agent'
               temperature: 0.5
             parser_name: 'generate_candidate_gemini_markdown_cot'
             sampling_count: 1
           - template_name: 'generate_candidate_two'
             engine_config:
-              engine_name: 'tablegpt-tool'
+              engine_name: 'llama-agent'
               temperature: 0.5
             parser_name: 'generate_candidate_gemini_markdown_cot'
             sampling_count: 1
@@ -35,7 +35,7 @@ team_agents:
       revise:
         template_name: 'revise_one'
         engine_config:
-          engine_name: 'tablegpt-tool'
+          engine_name: 'llama-agent'
           temperature: 0.0
         parser_name: 'revise_new'
 
@@ -45,7 +45,7 @@ team_agents:
       generate_unit_test:
         template_name: 'generate_unit_tests'
         engine_config:
-          engine_name: 'tablegpt-tool'
+          engine_name: 'llama-agent'
           temperature: 0.8
         parser_name: 'generate_unit_tests'
         unit_test_count: 1

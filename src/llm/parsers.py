@@ -15,32 +15,26 @@ class PythonListOutputParser(BaseOutputParser):
         super().__init__(**kwargs)
 
     def parse(self, output: str) -> Any:
-        # Extract the list portion using more precise pattern matching
-        list_match = re.search(
-            r'(?:Assistant:|Response:)\s*(\[.*?\])',  # Match list after "Assistant:"
-            output, 
+        print(f"Parsing output with PythonListOutputParser: {output}")
+        list_candidates = re.findall(
+            r'(?:^|\n)\s*(\[.*?\])\s*(?:$|\n)',  # Match standalone lists
+            output,
             re.DOTALL
         )
-        
-        if not list_match:
-            raise ValueError("No valid list found in the output")
-            
-        list_str = list_match.group(1).strip()
-        
-        # Clean up common formatting issues
-        list_str = re.sub(r",\s*]", "]", list_str)  # Fix trailing commas
-        list_str = re.sub(r"\s+", " ", list_str)    # Collapse whitespace
-        
-        # Handle smart quotes if present
-        list_str = list_str.replace("“", '"').replace("”", '"')
-        
-        logging.debug(f"Cleaned list string: {list_str}")
-        
-        try:
-            return literal_eval(list_str)
-        except (SyntaxError, ValueError) as e:
-            logging.error(f"Failed to parse list: {list_str}")
-            raise ValueError(f"Invalid list syntax: {e}") from e
+        for candidate in reversed(list_candidates):
+            try:
+                cleaned = self._clean_list(candidate)
+                return literal_eval(cleaned)
+            except (SyntaxError, ValueError) as e:
+                logging.debug(f"Failed candidate: {cleaned}\nError: {e}")
+                continue
+        raise OutputParserException("No valid Python list found")
+
+    def _clean_list(self, text: str) -> str:
+        text = re.sub(r",\s*]", "]", text)  # Fix trailing commas
+        text = re.sub(r"[\u201c\u201d]", '"', text)  # Replace smart quotes
+        text = re.sub(r"\s+", " ", text.strip())  # Normalize whitespace
+        return text
 
 class FilterColumnOutput(BaseModel):
     """Model for filter column output."""

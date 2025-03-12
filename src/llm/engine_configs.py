@@ -47,8 +47,6 @@ Each configuration includes a constructor, parameters, and an optional preproces
 model_path1='../models/models--meta-llama--Llama-3.1-70B-Instruct/snapshots/945c8663693130f8be2ee66210e062158b2a9693'
 model_path2='../models/models--tablegpt--TableGPT2-7B/snapshots/9de1c2116151f6ccc6915616f625bb9c365dd9ba'
 model_path3='../models/models--meta-llama--Llama-3.1-8B/snapshots/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b'
-cuda_visible='4,5,6,7'
-os.environ["CUDA_VISIBLE_DEVICES"] = cuda_visible
 
 class CustomHuggingFacePipeline(HuggingFacePipeline):
     def invoke(self, input: Union[str, List[Union[List[str], tuple[str, str], str, Dict[str, Any]]]], config = None, *, stop = None, **kwargs) -> AIMessage: 

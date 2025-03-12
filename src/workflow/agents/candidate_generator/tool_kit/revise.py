@@ -18,6 +18,8 @@ class Revise(Tool):
         self.template_name = template_name
         self.engine_config = engine_config
         self.parser_name = parser_name
+        self.max_fixing = 8
+        self.fixing = 0
         
 
     def _run(self, state: SystemState):
