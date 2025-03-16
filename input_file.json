@@ -1,6 +1,6 @@
 [
     {
-        "82_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -89,7 +89,7 @@
         ]
     },
     {
-        "71_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -173,7 +173,7 @@
         ]
     },
     {
-        "39_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -257,7 +257,7 @@
         ]
     },
     {
-        "53_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -341,7 +341,7 @@
         ]
     },
     {
-        "78_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -420,7 +420,7 @@
         ]
     },
     {
-        "56_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -494,7 +494,7 @@
         ]
     },
     {
-        "63_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -573,7 +573,7 @@
         ]
     },
     {
-        "58_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -642,7 +642,7 @@
         ]
     },
     {
-        "44_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -736,7 +736,7 @@
         ]
     },
     {
-        "88_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -820,7 +820,7 @@
         ]
     },
     {
-        "51_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -924,7 +924,7 @@
         ]
     },
     {
-        "20_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1008,7 +1008,7 @@
         ]
     },
     {
-        "64_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1092,7 +1092,7 @@
         ]
     },
     {
-        "80_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1176,7 +1176,7 @@
         ]
     },
     {
-        "3_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1230,7 +1230,7 @@
         ]
     },
     {
-        "17_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1314,7 +1314,7 @@
         ]
     },
     {
-        "50_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1368,7 +1368,7 @@
         ]
     },
     {
-        "14_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1462,7 +1462,7 @@
         ]
     },
     {
-        "84_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1551,7 +1551,7 @@
         ]
     },
     {
-        "61_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1625,7 +1625,7 @@
         ]
     },
     {
-        "41_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1724,7 +1724,7 @@
         ]
     },
     {
-        "57_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1798,7 +1798,7 @@
         ]
     },
     {
-        "42_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -1892,7 +1892,7 @@
         ]
     },
     {
-        "13_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2026,7 +2026,7 @@
         ]
     },
     {
-        "52_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2115,7 +2115,7 @@
         ]
     },
     {
-        "69_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2189,7 +2189,7 @@
         ]
     },
     {
-        "19_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2323,7 +2323,7 @@
         ]
     },
     {
-        "29_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2432,7 +2432,7 @@
         ]
     },
     {
-        "66_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2511,7 +2511,7 @@
         ]
     },
     {
-        "8_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2585,7 +2585,7 @@
         ]
     },
     {
-        "73_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2694,7 +2694,7 @@
         ]
     },
     {
-        "70_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2783,7 +2783,7 @@
         ]
     },
     {
-        "30_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2872,7 +2872,7 @@
         ]
     },
     {
-        "38_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -2951,7 +2951,7 @@
         ]
     },
     {
-        "75_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3035,7 +3035,7 @@
         ]
     },
     {
-        "5_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3114,7 +3114,7 @@
         ]
     },
     {
-        "21_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3193,7 +3193,7 @@
         ]
     },
     {
-        "60_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3267,7 +3267,7 @@
         ]
     },
     {
-        "2_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3346,7 +3346,7 @@
         ]
     },
     {
-        "18_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3425,7 +3425,7 @@
         ]
     },
     {
-        "22_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3574,7 +3574,7 @@
         ]
     },
     {
-        "6_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3633,7 +3633,7 @@
         ]
     },
     {
-        "54_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3707,7 +3707,7 @@
         ]
     },
     {
-        "15_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3791,7 +3791,7 @@
         ]
     },
     {
-        "67_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3865,7 +3865,7 @@
         ]
     },
     {
-        "0_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -3954,7 +3954,7 @@
         ]
     },
     {
-        "16_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -4038,7 +4038,7 @@
         ]
     },
     {
-        "46_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -4132,7 +4132,7 @@
         ]
     },
     {
-        "9_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
@@ -4216,7 +4216,7 @@
         ]
     },
     {
-        "10_california_schools": [
+        "Text2SQLRequest": [
             {
                 "step": "Information Retriever",
                 "input_length": 301,
